@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import Time from "./components/Time";
+import Location from "./components/Location";
+import Quote from "./components/Quote";
+
+import { useState, useEffect } from "react";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [time, setTime] = useState([]);
+	const [geolocation, setGeolocation] = useState([]);
+	const [quote, setQuote] = useState([]);
+
+	const getTime = () =>
+		fetch("http://worldtimeapi.org/api/ip")
+			.then((res) => res.json())
+			.then((data) => setTime(data));
+
+	const getLocation = () =>
+		fetch("https://freegeoip.app/json/")
+			.then((res) => res.json())
+			.then((place) => setGeolocation(place));
+
+	const getQuote = () =>
+		fetch("https://api.quotable.io/random")
+			.then((res) => res.json())
+			.then((quote) => setQuote(quote));
+
+	useEffect(getTime, []);
+
+	useEffect(getLocation, []);
+
+	useEffect(getQuote, []);
+
+	return (
+		<div className="App">
+			<h1>Hello from App</h1>
+			<Time time={time} />
+			<Location geolocation={geolocation} />
+			<Quote quote={quote} />
+		</div>
+	);
 }
 
 export default App;
