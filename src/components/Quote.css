@@ -1,0 +1,9 @@
+.quote-container {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.shuffle-icon {
+	cursor: pointer;
+}
