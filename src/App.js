@@ -1,6 +1,7 @@
 import Time from "./components/Time";
 import Location from "./components/Location";
 import Quote from "./components/Quote";
+import TimeDetails from "./components/TimeDetails";
 
 import { useState, useEffect } from "react";
 
@@ -8,6 +9,8 @@ function App() {
 	const [time, setTime] = useState([]);
 	const [geolocation, setGeolocation] = useState([]);
 	const [quote, setQuote] = useState([]);
+
+	const [more, setMore] = useState(false);
 
 	const getTime = () =>
 		fetch("http://worldtimeapi.org/api/ip")
@@ -30,12 +33,18 @@ function App() {
 
 	useEffect(getQuote, []);
 
+	const handleClickMore = () => {
+		setMore(!more);
+	};
+
 	return (
 		<div className="App">
 			<h1>Hello from App</h1>
 			<Quote quote={quote} />
 			<Time time={time} />
 			<Location geolocation={geolocation} />
+			<button onClick={handleClickMore}>{!more ? "More" : "Less"}</button>
+			{more && <TimeDetails time={time} />}
 		</div>
 	);
 }
