@@ -8,6 +8,8 @@
 	.main {
 		display: grid;
 		grid-template-columns: auto;
+		grid-template-rows: 1fr 2fr 3.5fr;
+		margin: 1.5rem 1.5rem 0 1.5rem;
 	}
 
 	.more-button {
@@ -15,6 +17,7 @@
 		grid-template-columns: auto auto;
 		align-items: center;
 		align-content: center;
+		align-self: self-end;
 		justify-content: left;
 		margin: 1.5rem;
 		width: fit-content;
