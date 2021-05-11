@@ -34,7 +34,7 @@ function App() {
 	return (
 		<div className="main">
 			<Quote />
-			<Time time={time} />
+			{/* <Time time={time} /> */}
 			<Location geolocation={geolocation} />
 			<div className="more-button">
 				{!more ? "More" : "Less"}
