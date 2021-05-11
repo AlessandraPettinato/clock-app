@@ -1,9 +1,37 @@
-.quote-container {
-	display: flex;
-	justify-content: flex-start;
-	align-items: center;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+@media screen and (max-width: 375px) {
+	.quote-container {
+		display: grid;
+		justify-content: start;
+		align-items: center;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto;
+		margin: 1.5rem;
+	}
+
+	.shuffle-icon {
+		cursor: pointer;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		font-size: 1.5rem;
+		margin: 0.3rem;
+	}
+
+	.quote-content,
+	.quote-author {
+		font-family: Inter;
+		grid-column-start: 1;
+		font-size: 0.8rem;
+	}
+
+	.quote-author {
+		font-weight: bold;
+	}
 }
 
-.shuffle-icon {
-	cursor: pointer;
+@media screen and (min-width: 376px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
 }

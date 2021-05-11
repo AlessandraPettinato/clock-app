@@ -1,7 +1,9 @@
 export default function Location({ geolocation }) {
 	return (
 		<div>
-			<p>You are currently in: {geolocation.city}</p>
+			<p>
+				In: {geolocation.city}, {geolocation.country_code}
+			</p>
 		</div>
 	);
 }
