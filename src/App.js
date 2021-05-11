@@ -3,12 +3,13 @@ import Location from "./components/Location";
 import Quote from "./components/Quote";
 import TimeDetails from "./components/TimeDetails";
 
+import "./App.css";
+
 import { useState, useEffect } from "react";
 
 function App() {
 	const [time, setTime] = useState([]);
 	const [geolocation, setGeolocation] = useState([]);
-	// const [quote, setQuote] = useState([]);
 
 	const [more, setMore] = useState(false);
 
@@ -22,28 +23,28 @@ function App() {
 			.then((res) => res.json())
 			.then((place) => setGeolocation(place));
 
-	// const getQuote = () =>
-	// 	fetch("https://api.quotable.io/random")
-	// 		.then((res) => res.json())
-	// 		.then((quote) => setQuote(quote));
-
 	useEffect(getTime, []);
 
 	useEffect(getLocation, []);
-
-	// useEffect(getQuote, []);
 
 	const handleClickMore = () => {
 		setMore(!more);
 	};
 
 	return (
-		<div className="App">
-			<h1>Hello from App</h1>
+		<div className="main">
 			<Quote />
 			<Time time={time} />
 			<Location geolocation={geolocation} />
-			<button onClick={handleClickMore}>{!more ? "More" : "Less"}</button>
+			<div className="more-button">
+				{!more ? "More" : "Less"}
+				<img
+					className="arrow"
+					src="https://res.cloudinary.com/dg5lakmem/image/upload/v1620664041/Clock%20App/desktop/icon-arrow-up_ubkxpe.svg"
+					alt="show-more"
+					onClick={handleClickMore}
+				/>
+			</div>
 			{more && <TimeDetails time={time} />}
 		</div>
 	);
