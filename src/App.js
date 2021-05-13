@@ -1,8 +1,7 @@
-import Time from "./components/Time";
-import Location from "./components/Location";
+import Clock from "./components/Clock";
 import Quote from "./components/Quote";
+import Location from "./components/Location";
 import TimeDetails from "./components/TimeDetails";
-import Greeting from "./components/Greeting";
 
 import "./App.css";
 
@@ -15,7 +14,7 @@ function App() {
 	const [more, setMore] = useState(false);
 
 	const getTime = () =>
-		fetch("http://worldtimeapi.org/api/ip")
+		fetch("http://worldtimeapi.org/api/ip.text")
 			.then((res) => res.json())
 			.then((data) => setTime(data));
 
@@ -35,9 +34,7 @@ function App() {
 	return (
 		<div className="main">
 			<Quote />
-			{/* <Time time={time} /> */}
-			<Greeting time={time} />
-			<Location geolocation={geolocation} />
+			<Clock geolocation={geolocation} />
 			<div className="more-button">
 				{!more ? "More" : "Less"}
 				<img
@@ -47,6 +44,7 @@ function App() {
 					onClick={handleClickMore}
 				/>
 			</div>
+			<Location geoLocation={geolocation} />
 			{more && <TimeDetails time={time} />}
 		</div>
 	);

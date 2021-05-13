@@ -1,0 +1,61 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+@media screen and (max-width: 375px) {
+	.clock {
+		display: grid;
+		grid-row-start: 2;
+		grid-column-start: 1;
+		align-self: end;
+	}
+
+	.time-container {
+		grid-row-start: 2;
+		grid-column-start: 1;
+		margin-left: 1.5rem;
+		margin-bottom: 3.5rem;
+	}
+
+	.time {
+		font-family: Inter;
+		font-weight: bold;
+		color: #ffff;
+		font-size: 6rem;
+		text-transform: uppercase;
+		align-self: end;
+	}
+
+	.greeting {
+		display: grid;
+		justify-content: left;
+		align-items: center;
+		grid-gap: 0.5rem;
+		margin: -2rem;
+		grid-row-start: 2;
+		grid-column-start: 1;
+		align-content: baseline;
+		margin-left: 0.5rem;
+	}
+
+	.sun {
+		color: #ffff;
+		font-size: 1.3rem;
+		font-weight: bold;
+		grid-column-start: 1;
+	}
+
+	.morning {
+		grid-column-start: 2;
+		font-size: 1.3rem;
+		font-family: Inter;
+		color: #ffff;
+		font-weight: 300;
+		letter-spacing: 5px;
+		text-transform: uppercase;
+	}
+}
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+}
+
+@media screen and (min-width: 769px) and (max-width: 1440px) {
+}
