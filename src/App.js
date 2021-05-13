@@ -2,6 +2,7 @@ import Time from "./components/Time";
 import Location from "./components/Location";
 import Quote from "./components/Quote";
 import TimeDetails from "./components/TimeDetails";
+import Greeting from "./components/Greeting";
 
 import "./App.css";
 
@@ -35,6 +36,7 @@ function App() {
 		<div className="main">
 			<Quote />
 			{/* <Time time={time} /> */}
+			<Greeting time={time} />
 			<Location geolocation={geolocation} />
 			<div className="more-button">
 				{!more ? "More" : "Less"}
