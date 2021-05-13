@@ -1,8 +1,10 @@
-export default function Location({ geolocation }) {
+import "./Location.css";
+
+export default function Location({ geoLocation }) {
 	return (
-		<div>
-			<p>
-				In {geolocation.city}, {geolocation.country_code}
+		<div className="location-container">
+			<p className="location">
+				In {geoLocation.city}, {geoLocation.country_code}
 			</p>
 		</div>
 	);
