@@ -16,9 +16,10 @@
 		cursor: pointer;
 		grid-column-start: 2;
 		grid-row-start: 1;
-		font-size: 1.5rem;
 		color: #303030;
-		margin: 0.3rem;
+		position: fixed;
+		margin-right: 1rem;
+		right: 0;
 	}
 
 	.quote-content,
@@ -27,10 +28,16 @@
 		color: #303030;
 		grid-column-start: 1;
 		font-size: 1rem;
+		padding-right: 1.8rem;
+		white-space: break-spaces;
 	}
 
 	.quote-author {
 		font-weight: bold;
+	}
+
+	.refresh {
+		font-size: 1.5rem;
 	}
 }
 

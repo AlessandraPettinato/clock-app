@@ -1,0 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap");
+
+@media screen and (max-width: 375px) {
+	.time-details {
+		display: grid;
+		grid-row-start: 3;
+		grid-column-start: 1;
+		font-family: Inter;
+		font-weight: 600;
+		color: #ffff;
+		font-size: 1rem;
+		margin-left: 1.5rem;
+	}
+}
