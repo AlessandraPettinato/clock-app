@@ -40,7 +40,7 @@ class Clock extends Component {
 				<div className="greeting">
 					<RiSunFill className="sun" />
 					<p className="morning">
-						{this.state.time.hour <= 12 ? "Good evening" : "Good morning"}
+						{this.state.time.hour > 12 ? "Good evening" : "Good morning"}
 					</p>
 				</div>
 				<div className="time-container">

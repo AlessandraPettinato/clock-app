@@ -14,11 +14,11 @@ export default function Quote() {
 
 	return (
 		<div className="quote-container">
-			<div className="shuffle-icon">
-				<BiRefresh onClick={getQuote} />
-			</div>
 			<p className="quote-content">"{quote.content}"</p>
 			<p className="quote-author">{quote.author}</p>
+			<div className="shuffle-icon">
+				<BiRefresh className="refresh" onClick={getQuote} />
+			</div>
 		</div>
 	);
 }

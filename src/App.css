@@ -5,7 +5,7 @@
 }
 
 @media screen and (max-width: 375px) {
-	html {
+	body {
 		background-image: url("https://res.cloudinary.com/dg5lakmem/image/upload/v1620900089/Clock%20App/mobile/pexels-irina-iriser-3134681_dcazr3.jpg");
 		background-size: cover;
 		background-attachment: fixed;
@@ -14,41 +14,9 @@
 	.main {
 		display: grid;
 		grid-template-columns: auto;
-		grid-template-rows: 1fr 6.5fr 1fr;
-		margin: 0.5rem;
-	}
-
-	.more-button {
-		display: grid;
-		grid-template-columns: auto auto;
-		align-items: center;
-		align-content: center;
-		align-self: self-end;
-		justify-content: left;
-		margin: 1.5rem;
-		width: fit-content;
-		height: 3rem;
-		background: #fffffc;
-		border-radius: 1.5rem;
-		padding: 0.7rem;
-		font-family: Inter;
-		text-transform: uppercase;
-		font-size: 0.8rem;
-		letter-spacing: 0.2rem;
-		cursor: pointer;
-		grid-row-start: 3;
-	}
-
-	.more-button > .arrow {
-		padding: 3px;
-	}
-
-	.arrow {
-		width: 80%;
-		justify-self: end;
-	}
-
-	.marrow:hover {
-		color: #999999;
+		grid-template-rows: 1fr 6fr 1fr;
+		height: 100vh;
+		overflow-y: hidden;
+		overflow-x: hidden;
 	}
 }
