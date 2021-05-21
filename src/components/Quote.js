@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { BiRefresh } from "react-icons/bi";
+import { animated } from "react-spring";
+
 import "./Quote.css";
 
-export default function Quote() {
+export default function Quote({ moveUp }) {
 	const [quote, setQuote] = useState([]);
 
 	const getQuote = () =>
@@ -13,12 +15,12 @@ export default function Quote() {
 	useEffect(getQuote, []);
 
 	return (
-		<div className="quote-container">
+		<animated.div className="quote-container" style={moveUp}>
 			<p className="quote-content">"{quote.content}"</p>
 			<p className="quote-author">{quote.author}</p>
 			<div className="shuffle-icon">
 				<BiRefresh className="refresh" onClick={getQuote} />
 			</div>
-		</div>
+		</animated.div>
 	);
 }

@@ -5,16 +5,13 @@
 }
 
 @media screen and (max-width: 375px) {
-	body {
-		background-image: url("https://res.cloudinary.com/dg5lakmem/image/upload/v1620900089/Clock%20App/mobile/pexels-irina-iriser-3134681_dcazr3.jpg");
+	.main {
+		background-image: url("https://res.cloudinary.com/dg5lakmem/image/upload/v1620664048/Clock%20App/mobile/bg-image-daytime_xeqluj.jpg");
 		background-size: cover;
 		background-attachment: fixed;
-	}
-
-	.main {
 		display: grid;
 		grid-template-columns: auto;
-		grid-template-rows: 1fr 6fr 1fr;
+		grid-template-rows: auto 1fr auto;
 		height: 100vh;
 		overflow-y: hidden;
 		overflow-x: hidden;

@@ -10,15 +10,23 @@ export default function TimeDetails({
 	more,
 }) {
 	const moveDetails = useSpring({
-		transform: !more ? "translateY(0px)" : "translateY(-50px)",
+		transform: !more ? "translateY(0px)" : "translateY(-30px)",
 	});
 
 	return (
 		<animated.div className="time-details" style={moveDetails}>
-			<p>Current timezone: {timezone}</p>
-			<p>Day of the year: {day_of_year}</p>
-			<p>Day of the week: {day_of_week}</p>
-			<p>Week number: {week_number}</p>
+			<h4 className="caption">
+				Current timezone <span className="detail">{timezone}</span>
+			</h4>
+			<h4 className="caption">
+				Day of the year <span className="detail">{day_of_year}</span>
+			</h4>
+			<h4 className="caption">
+				Day of the week <span className="detail">{day_of_week}</span>
+			</h4>
+			<h4 className="caption">
+				Week number <span className="detail">{week_number}</span>
+			</h4>
 		</animated.div>
 	);
 }
