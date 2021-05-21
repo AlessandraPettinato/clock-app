@@ -1,11 +1,13 @@
 import "./Location.css";
 
-export default function Location({ geoLocation }) {
+import { animated } from "react-spring";
+
+export default function Location({ geoLocation, moveUp }) {
 	return (
-		<div className="location-container">
+		<animated.div className="location-container" style={moveUp}>
 			<p className="location">
 				In {geoLocation.city}, {geoLocation.country_code}
 			</p>
-		</div>
+		</animated.div>
 	);
 }
