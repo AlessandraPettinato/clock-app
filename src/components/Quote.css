@@ -12,14 +12,16 @@
 		position: absolute;
 	}
 
-	.shuffle-icon {
+	.refresh-container {
 		cursor: pointer;
 		grid-column-start: 2;
 		grid-row-start: 1;
 		color: #303030;
-		position: fixed;
+		font-size: 1.5rem;
 		margin-right: 1rem;
+		position: absolute;
 		right: 0;
+		top: 1rem;
 	}
 
 	.quote-content,
@@ -35,13 +37,45 @@
 	.quote-author {
 		font-weight: bold;
 	}
-
-	.refresh {
-		font-size: 1.5rem;
-	}
 }
 
 @media screen and (min-width: 376px) and (max-width: 768px) {
+	.quote-container {
+		display: grid;
+		justify-content: start;
+		align-items: center;
+		grid-template-columns: auto auto;
+		grid-template-rows: auto;
+		margin: 0.8rem;
+		grid-gap: 0.5rem;
+		position: absolute;
+	}
+
+	.refresh-container {
+		cursor: pointer;
+		grid-column-start: 2;
+		grid-row-start: 1;
+		color: #303030;
+		font-size: 1.5rem;
+		margin-right: 1rem;
+		position: absolute;
+		right: 0;
+		top: 1rem;
+	}
+
+	.quote-content,
+	.quote-author {
+		font-family: Inter;
+		color: #303030;
+		grid-column-start: 1;
+		font-size: 1rem;
+		padding-right: 1.8rem;
+		white-space: break-spaces;
+	}
+
+	.quote-author {
+		font-weight: bold;
+	}
 }
 
 @media screen and (min-width: 769px) and (max-width: 1440px) {
