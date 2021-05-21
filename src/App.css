@@ -17,3 +17,17 @@
 		overflow-x: hidden;
 	}
 }
+
+@media screen and (min-width: 376px) and (max-width: 768px) {
+	.main {
+		background-image: url("https://res.cloudinary.com/dg5lakmem/image/upload/v1620664049/Clock%20App/tablet/bg-image-daytime_pdxg4x.jpg");
+		background-size: cover;
+		background-attachment: fixed;
+		display: grid;
+		grid-template-columns: auto;
+		grid-template-rows: auto 1fr auto;
+		height: 100vh;
+		overflow-y: hidden;
+		overflow-x: hidden;
+	}
+}

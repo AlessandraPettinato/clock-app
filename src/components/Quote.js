@@ -18,8 +18,8 @@ export default function Quote({ moveUp }) {
 		<animated.div className="quote-container" style={moveUp}>
 			<p className="quote-content">"{quote.content}"</p>
 			<p className="quote-author">{quote.author}</p>
-			<div className="shuffle-icon">
-				<BiRefresh className="refresh" onClick={getQuote} />
+			<div className="refresh-container">
+				<BiRefresh onClick={getQuote} />
 			</div>
 		</animated.div>
 	);
