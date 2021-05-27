@@ -47,6 +47,7 @@ export default function App() {
 
 	return (
 		<div className="main">
+			<p>Test</p>
 			<Quote more={more} moveUp={moveUp} />
 			<animated.div style={moveClock}>
 				<Clock geolocation={geolocation} {...time} />
