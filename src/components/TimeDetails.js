@@ -1,5 +1,3 @@
-import { useSpring, animated } from "react-spring";
-
 import "./TimeDetails.css";
 
 export default function TimeDetails({
@@ -7,14 +5,9 @@ export default function TimeDetails({
 	day_of_year,
 	day_of_week,
 	week_number,
-	more,
 }) {
-	const moveDetails = useSpring({
-		transform: !more ? "translateY(0px)" : "translateY(-30px)",
-	});
-
 	return (
-		<animated.div className="time-details" style={moveDetails}>
+		<div className="time-details">
 			<h4 className="caption">
 				Current timezone <span className="detail">{timezone}</span>
 			</h4>
@@ -27,6 +20,6 @@ export default function TimeDetails({
 			<h4 className="caption">
 				Week number <span className="detail">{week_number}</span>
 			</h4>
-		</animated.div>
+		</div>
 	);
 }
