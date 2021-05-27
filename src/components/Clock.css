@@ -25,15 +25,10 @@
 	}
 
 	.greeting {
-		display: grid;
-		justify-content: left;
-		align-items: center;
-		grid-gap: 0.5rem;
-		margin: -2rem;
-		grid-row-start: 2;
-		grid-column-start: 1;
-		align-content: baseline;
-		margin-left: 0.5rem;
+		display: flex;
+		order: 1;
+		gap: 0.9rem;
+		margin-left: 1rem;
 	}
 
 	.sun {
@@ -44,7 +39,8 @@
 	}
 
 	.morning {
-		grid-column-start: 2;
+		display: flex;
+		order: 2;
 		font-size: 1.3rem;
 		font-family: Inter;
 		color: #ffff;

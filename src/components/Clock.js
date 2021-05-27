@@ -1,33 +1,24 @@
 import { RiSunFill } from "react-icons/ri";
-import { animated } from "react-spring";
-// import Spinner from "react-bootstrap/Spinner";
+
+import "moment-timezone";
 
 import "./Clock.css";
 
-export default function Clock({ moveUp, datetime }) {
-	// const extractTime = datetime.substr(11, 5);
-
-	// if (!datetime.length)
-	// 	return (
-	// 		<Spinner animation="border" role="status">
-	// 			<span className="sr-only">Loading...</span>
-	// 		</Spinner>
-	// 	);
+export default function Clock() {
+	const today = new Date();
+	const time = today.getHours() + ":" + today.getMinutes();
 
 	return (
-		<animated.div className="clock" style={moveUp}>
+		<div className="clock">
 			<div className="greeting">
+				<p className="morning">
+					{today.getHours < 12 ? "Good morning" : "Good evening"}
+				</p>
 				<RiSunFill className="sun" />
-
-				{/* <p className="morning">
-					{extractTime > 0 ? "good evening" : "good morning"}
-				</p> */}
 			</div>
-
 			<div className="time-container">
-				<p className="time">{datetime}</p>
-				{/* <p className="time">{extractTime}</p> */}
+				<p className="time">{time}</p>
 			</div>
-		</animated.div>
+		</div>
 	);
 }

@@ -1,30 +1,19 @@
-import Clock from "./components/Clock";
-import Quote from "./components/Quote";
-import Location from "./components/Location";
-// import More from "./components/More.js";
-import TimeDetails from "./components/TimeDetails";
-// import Spinner from "react-bootstrap/Spinner";
-
-import "./App.css";
-import "./components/More.css";
-// import "bootstrap/dist/css/bootstrap.min.css";
-
 import { useState, useEffect } from "react";
 import { useSpring, animated } from "react-spring";
 
-function App() {
+import Clock from "./components/Clock";
+import Quote from "./components/Quote";
+import Location from "./components/Location";
+import TimeDetails from "./components/TimeDetails";
+
+import "./App.css";
+import "./components/More.css";
+
+export default function App() {
 	const [time, setTime] = useState([]);
 	const [geolocation, setGeolocation] = useState([]);
 
 	const [more, setMore] = useState(false);
-
-	const handleClickMore = () => {
-		setMore(!more);
-	};
-
-	const moveUp = useSpring({
-		transform: !more ? "translateY(0px)" : "translateY(-200px)",
-	});
 
 	const getTime = () =>
 		fetch("http://worldtimeapi.org/api/ip")
@@ -40,11 +29,31 @@ function App() {
 
 	useEffect(getLocation, []);
 
+	const handleClickMore = () => {
+		setMore(!more);
+	};
+
+	const moveUp = useSpring({
+		transform: !more ? "translateY(0px)" : "translateY(-200px)",
+	});
+
+	const moveClock = useSpring({
+		transform: !more ? "translateY(500px)" : "translateY(250px)",
+	});
+
+	const moveLocation = useSpring({
+		transform: !more ? "translateY(450px)" : "translateY(250px)",
+	});
+
 	return (
 		<div className="main">
 			<Quote more={more} moveUp={moveUp} />
-			<Clock geolocation={geolocation} moveUp={moveUp} {...time} />
-			<Location geoLocation={geolocation} time={time} moveUp={moveUp} />
+			<animated.div style={moveClock}>
+				<Clock geolocation={geolocation} {...time} />
+			</animated.div>
+			<animated.div style={moveLocation}>
+				<Location geoLocation={geolocation} time={time} />
+			</animated.div>
 			<animated.div className="more-button" style={moveUp}>
 				{!more ? "More" : "Less"}
 				<img
@@ -58,5 +67,3 @@ function App() {
 		</div>
 	);
 }
-
-export default App;
